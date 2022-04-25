@@ -876,7 +876,7 @@ sidebar_label: kalibr installation guide and usage
 - Example for exposure setting calibration: https://youtu.be/V5VHD9SYvvU
 
 ### Recording the Rosbag file:
-  - Make sure you off the emitter before you rosbag record the video. Also, change the frame rate to 6hz and camera height and width to (640 x 480).
+  - Make sure you off the emitter before you rosbag record the video. Also, change the frame rate to 6hz and camera height and width to (640 x 480). (Edit inside the rs_camera.launch folder)
   - Before recording, make sure to do all the required camera calibration for the realsense (imu calibration, distance calibration and camera calibration)
   - Adjust the exposure and gain and ensure that when you shake the camera slighly, the image is still very clear.
   - Below is the example of recording the rosbag file for realsense D435I.
@@ -888,7 +888,10 @@ sidebar_label: kalibr installation guide and usage
 
 #### Recording a compress Rosbag file:
   - Below is the example of recording the compress rosbag file for realsense D435I.
-  - This is required as max recording is up to 4gb and 
+  ```bash 
+  roslaunch realsense2_camera rs_camera.launch
+  rqt_image_view
+  ```
   ```bash
   rosbag record -- lz4 camera-imu-data.bag /camera/imu /camera/infra1/image_rect_raw /camera/infra2/image_rect_raw
   ```
