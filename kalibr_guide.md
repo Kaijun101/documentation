@@ -3,7 +3,9 @@ hide_title: true
 sidebar_label: kalibr installation guide and usage
 ---
 ## kalibr installation guide and usage:
-  - Credit 
+  - Below is the complete kalibr camera calibration guide for intel realsense D435I.
+  - References: https://github.com/chengguizi/basalt-mirror
+  - References: https://github.com/matthewoots?after=Y3Vyc29yOnYyOpK5MjAyMS0wNS0wMlQyMTo0OTowNSswODowMM4VrFti&tab=repositories
 
 ### Complete kalibr guide for camera calibration:
  - Below is the sequences that is requried for the camera calibration:
@@ -99,6 +101,11 @@ sidebar_label: kalibr installation guide and usage
 ### Recording the Rosbag file:
   - Make sure you off the emitter before you rosbag record the video. Also, change the frame rate to 6hz and camera height and width to (640 x 480).
   - Before recording, make sure to do all the required camera calibration for the realsense (imu calibration, depth image calibration and camera calibration)
+   ![image](https://user-images.githubusercontent.com/90491438/165130384-4ec1a1d2-94cd-4522-9454-0e85f6102d24.png)
+   ![image](https://user-images.githubusercontent.com/90491438/165130523-bc2122eb-4ff3-43b7-b70b-2146d7e30d90.png)
+   ![image](https://user-images.githubusercontent.com/90491438/165130755-9b8bfd01-aa67-4d1e-bc2f-a99a8b5ae243.png)
+
+
   - Adjust the exposure and gain and ensure that when you shake the camera slighly, the image is still very clear.
   - Below is the example of recording the rosbag file for realsense D435I.
   - camera-imu-data.bag: Rosbag file name.
@@ -133,6 +140,10 @@ sidebar_label: kalibr installation guide and usage
   source devel/setup.bash
   kalibr_calibrate_imu_camera --target <aprilgrid_yaml_file_location> --bag <rosbag_file_location> --cam <Kalibr_camera_calibration_result_obtain_from_above> --imu <IMU_yaml_file_location>
   ```
+### Review of kalibr result
+  - Below is the image of one section of kalibr result, the red line represent the ideal range. If the reading is too far out of the ideal range, you should redo the whole camera calibration. Alternatively, you can try with the VIO to see how much drift occurs with the new camera calibration result.
+![image](https://user-images.githubusercontent.com/90491438/165131004-2dc8bb1f-051c-4447-905f-97d79bf9e1c3.png)
+
 
 ### Converting kalibr yaml file to jason file (Requried file format for basalt VIO):
   - As some VIO requires the calibration to be in jason format, below is a python scripts that will convert the camera calibration from yaml to jason format. However, it requries scipy and sophus to work. 
@@ -154,7 +165,7 @@ sidebar_label: kalibr installation guide and usage
   pip3 install sophuspy
   ```
 
-  - Copy the below scripts and save it inside a text file as a pinhole_kalibr_rs.py file:
+  - Copy the below scripts and save it inside a text file as a pinhole_kalibr_rs.py file.
   - Make sure to edited the "distortion_coeffs" that is inside this python file that is obtain from the kalibr result before running the python scripts.
   ```bash
 	#!/usr/bin/env python3
