@@ -142,6 +142,7 @@ sidebar_label: kalibr installation guide and usage
   ```
 ### Review of kalibr result
   - Below is the image of one section of kalibr result, the red line represent the ideal range. If the reading is too far out of the ideal range, you should redo the whole camera calibration. Alternatively, you can try with the VIO to see how much drift occurs with the new camera calibration result.
+  - VIO drift occurs due to several reason such poor camera calibration, wrong coordinate frame and improper lighting.
 ![image](https://user-images.githubusercontent.com/90491438/165131004-2dc8bb1f-051c-4447-905f-97d79bf9e1c3.png)
 
 
