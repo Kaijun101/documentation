@@ -882,16 +882,16 @@ sidebar_label: kalibr installation guide and usage
   - Below is the example of recording the rosbag file for realsense D435I.
   - camera-imu-data.bag: Rosbag file name.
   - The rest are the topic that is required (camera video + IMU).
+  ```bash 
+  roslaunch realsense2_camera rs_camera.launch
+  rqt_image_view
+  ```
   ```bash
   rosbag record -O camera-imu-data.bag /camera/imu /camera/infra1/image_rect_raw /camera/infra2/image_rect_raw
   ```
 
 #### Recording a compress Rosbag file:
   - Below is the example of recording the compress rosbag file for realsense D435I.
-  ```bash 
-  roslaunch realsense2_camera rs_camera.launch
-  rqt_image_view
-  ```
   ```bash
   rosbag record -- lz4 camera-imu-data.bag /camera/imu /camera/infra1/image_rect_raw /camera/infra2/image_rect_raw
   ```
