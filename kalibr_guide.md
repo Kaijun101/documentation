@@ -6,6 +6,7 @@ sidebar_label: kalibr installation guide and usage
   - Below is the complete kalibr camera calibration guide for intel realsense D435I.
   - Credit: https://github.com/chengguizi/basalt-mirror
   - Credit: https://github.com/matthewoots?after=Y3Vyc29yOnYyOpK5MjAyMS0wNS0wMlQyMTo0OTowNSswODowMM4VrFti&tab=repositories
+  - Credit: https://github.com/ethz-asl/kalibr
 
 ### Complete kalibr guide for camera calibration:
  - Below is the sequences that is requried for the camera calibration:
@@ -898,10 +899,13 @@ sidebar_label: kalibr installation guide and usage
 
 ### Getting the Kalibr camera result:
   - Things you need: Aprilgrid.yaml and rosbag file (Camera + imu).
+  - camera_model: pinhole-radtan (Most ideal for realsense D435I) (If there is 2 camera topics make sure to put the camera model twice). References: https://github.com/ethz-asl/kalibr/wiki/yaml-formats
+  - Fisheyes len camera model: ds-none, omni-radtan or omni-none (Usually this 3)
+  - camera_topic: Could be found after launching the realsense camera, followed by rostopic list.
   ```bash
   cd ~/kalibr_ws 
   source devel/setup.bash
-  kalibr_calibrate_cameras --target <aprilgrid_yaml_file_location> --bag <rosbag_file_location> --models pinhole-radtan pinhole-radtan --topics /camera/infra1/image_rect_raw /camera/infra2/image_rect_raw
+  kalibr_calibrate_cameras --target <aprilgrid_yaml_file_location> --bag <rosbag_file_location> --models <camera_model> --topics <camera_topic>
   ```
 
 ### Getting the Kalibr camera result with IMU result:
