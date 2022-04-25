@@ -4,8 +4,8 @@ sidebar_label: kalibr installation guide and usage
 ---
 ## kalibr installation guide and usage:
   - Below is the complete kalibr camera calibration guide for intel realsense D435I.
-  - References: https://github.com/chengguizi/basalt-mirror
-  - References: https://github.com/matthewoots?after=Y3Vyc29yOnYyOpK5MjAyMS0wNS0wMlQyMTo0OTowNSswODowMM4VrFti&tab=repositories
+  - Credit: https://github.com/chengguizi/basalt-mirror
+  - Credit: https://github.com/matthewoots?after=Y3Vyc29yOnYyOpK5MjAyMS0wNS0wMlQyMTo0OTowNSswODowMM4VrFti&tab=repositories
 
 ### Complete kalibr guide for camera calibration:
  - Below is the sequences that is requried for the camera calibration:
