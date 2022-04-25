@@ -864,15 +864,15 @@ sidebar_label: kalibr installation guide and usage
   ```
   
 #### Realsense Distance camera calibration
-  - Launch realsense-viwer and go to the tare calibration
+  - Launch realsense-viewer and go to the tare calibration
 ![image](https://user-images.githubusercontent.com/90491438/165133988-fb7a6a3d-7ac3-406d-a8f4-68299dc65f8a.png)
 
 #### RealSense extrinsic and intrinsic calibration
-  - Launch realsense-viwer and go to the on-chip calibration
+  - Launch realsense-viewer and go to the on-chip calibration
   - Example for extrinsic and intrinsic calibration: https://youtu.be/xiOlgkjn4kI
 
 #### RealSense Exposure setting for calibration
-- Launch realsense-viwer, off the depth image and on the infra image to view the 2 infra camera.
+- Launch realsense-viewer, off the depth image and on the infra image to view the 2 infra camera.
 - Example for exposure setting calibration: https://youtu.be/V5VHD9SYvvU
 
 ### Recording the Rosbag file:
