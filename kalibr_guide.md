@@ -868,17 +868,15 @@ sidebar_label: kalibr installation guide and usage
 
 #### RealSense extrinsic and intrinsic calibration
   - Launch realsense-viwer and go to the on-chip calibration
-  - Below is the example for your references
-Link: https://youtu.be/xiOlgkjn4kI
+  - Example for extrinsic and intrinsic calibration: https://youtu.be/xiOlgkjn4kI
 
 #### RealSense Exposure setting for calibration
 - Launch realsense-viwer, off the depth image and on the infra image to view the 2 infra camera.
-- Below is the example for your references
-Link: https://youtu.be/V5VHD9SYvvU
+- Example for exposure setting calibration: https://youtu.be/V5VHD9SYvvU
 
 ### Recording the Rosbag file:
   - Make sure you off the emitter before you rosbag record the video. Also, change the frame rate to 6hz and camera height and width to (640 x 480).
-  - Before recording, make sure to do all the required camera calibration for the realsense (imu calibration, depth image calibration and camera calibration)
+  - Before recording, make sure to do all the required camera calibration for the realsense (imu calibration, distance calibration and camera calibration)
   - Adjust the exposure and gain and ensure that when you shake the camera slighly, the image is still very clear.
   - Below is the example of recording the rosbag file for realsense D435I.
   - camera-imu-data.bag: Rosbag file name.
